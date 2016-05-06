@@ -8,7 +8,7 @@ class Admin::ItemsController < Admin::BaseController
     if @item.save
       redirect_to admin_items_path
     else
-      flash.now[:error] = "You done goofed"
+      flash.now[:error] = @item.errors.full_messages
       render :new
     end
   end

@@ -9,7 +9,7 @@ class Admin::UsersController < Admin::BaseController
       flash[:message] = "User Successfully Created"
       redirect_to admin_users_path
     else
-      flash.now[:error] = "something went wrong"
+      flash.now[:error] = @user.errors.full_messages
       render :new
     end
   end
@@ -21,6 +21,6 @@ class Admin::UsersController < Admin::BaseController
   private
 
   def user_params
-    params.require(:user).permit(:name)
+    params.require(:user).permit(:name, :password)
   end
 end
