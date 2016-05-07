@@ -1,1 +1,5 @@
 
+<% @cart.cart_items.each do |item| %>
+  <br/>name:<%= item.name %><br/>
+  quantity:<%= item.quantity  %><br/>
+<% end %>

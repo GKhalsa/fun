@@ -38,6 +38,9 @@ group :development, :test do
   gem 'launchy'
   gem 'rspec-rails'
   gem 'capybara'
+  gem 'figaro'
+  gem 'paperclip'
+  gem 'aws-sdk', '< 2.0'
 end
 
 group :development do

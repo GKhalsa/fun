@@ -4,5 +4,6 @@
 <% @items.each do |item| %>
   <%= item.name %><br/>
   $<%= item.price %><br/>
+  <%= image_tag item.image(:thumb) %>
   <%= button_to "add to cart", cart_path(item_id: item.id) %>
 <% end %>

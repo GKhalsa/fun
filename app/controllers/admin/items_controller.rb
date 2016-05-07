@@ -19,13 +19,13 @@ class Admin::ItemsController < Admin::BaseController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy 
+    @item.destroy
     redirect_to admin_items_path
   end
 
   private
 
   def item_params
-    params.require(:item).permit(:name, :price)
+    params.require(:item).permit(:name, :price, :image)
   end
 end

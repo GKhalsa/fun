@@ -8,4 +8,11 @@ class Cart
     @contents[item_id.to_s] ||= 0
     @contents[item_id.to_s] += 1
   end
+
+  def cart_items
+    contents.map do |item_id, quantity|
+      item = Item.find(item_id)
+      CartItem.new(item, quantity)
+    end
+  end
 end
