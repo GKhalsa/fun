@@ -1,14 +1,19 @@
 Rails.application.routes.draw do
 
+  root 'items#index'
+
   namespace :admin do
-    resources :items, only: [:create, :index, :show, :new]
-    resources :users, only: [:create, :index, :show, :new]
+    resources :items, only: [:create, :index, :show, :new, :destroy]
+    resources :users, only: [:create, :index, :show, :new, :destroy]
+    get "/dashboard", to: "dashboard#show", as: :dashboard
   end
 
   get "/login", to: "sessions#new", as: :login
   post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy", as: :logout
 
   resources :items, only: [:index]
+  resource :cart, only: [:create, :show]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

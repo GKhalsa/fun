@@ -2,4 +2,5 @@
 
 <% @users.each do |user| %>
   User:<%= user.name %><br/>
+  <%= link_to "delete user", admin_user_path(user), method: :delete %><br/>
 <% end %>

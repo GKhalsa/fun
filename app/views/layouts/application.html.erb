@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
+<%= login_or_logout %>
+<%= dashboard_if_admin %>
 <body>
 <% flash.each do |type, message| %>
 <%= message %>

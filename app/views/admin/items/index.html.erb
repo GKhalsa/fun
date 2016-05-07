@@ -3,4 +3,5 @@
 <% @items.each do |item| %>
   Item Name: <%= item.name %></br>
   Item Price: <%= item.price %></br>
+  <%= link_to "Delete", admin_item_path(item), method: :delete %>
 <% end %>
