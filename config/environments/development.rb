@@ -39,6 +39,17 @@ Rails.application.configure do
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 
+
+  config.paperclip_defaults = {
+    storage: :s3,
+    s3_credentials: {
+      bucket: ENV.fetch('S3_BUCKET_NAME'),
+      access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
+      secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
+      s3_region: ENV.fetch('AWS_REGION'),
+    }
+  }
+
   config.action_mailer.delivery_method = :smtp
   # SMTP settings for gmail
   config.action_mailer.smtp_settings = {
@@ -50,15 +61,6 @@ Rails.application.configure do
   :enable_starttls_auto => true
   }
 
-  config.paperclip_defaults = {
-  storage: :s3,
-  s3_credentials: {
-    bucket: ENV.fetch('S3_BUCKET_NAME'),
-    access_key_id: ENV.fetch('AWS_ACCESS_KEY_ID'),
-    secret_access_key: ENV.fetch('AWS_SECRET_ACCESS_KEY'),
-    s3_region: ENV.fetch('AWS_REGION'),
-  }
-}
 
 
 end
