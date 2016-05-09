@@ -5,3 +5,6 @@ It has basic admin crud features to create items and users
 It has a cart  
 
 Youtube Videos:
+
+* [Rails Action Mailer Tutorial](https://www.youtube.com/watch?v=wN3rD3cggNw)
+* [Using Paperclip and AWS with Rails](https://www.youtube.com/watch?v=opiDMh25wQM)

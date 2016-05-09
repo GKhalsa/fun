@@ -9,8 +9,10 @@ Rails.application.routes.draw do
   end
 
   get "/login", to: "sessions#new", as: :login
-  post "/login", to: "sessions#create"
+  get "/auth/github/callback", to: "sessions#create"
   delete "/logout", to: "sessions#destroy", as: :logout
+
+  get "/auth/github", as: :github_login
 
   resources :items, only: [:index]
   resource :cart, only: [:create, :show]

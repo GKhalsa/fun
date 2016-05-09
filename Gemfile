@@ -41,6 +41,8 @@ group :development, :test do
   gem 'figaro'
   gem 'paperclip'
   gem 'aws-sdk', '< 2.0'
+  gem 'omniauth'
+  gem 'omniauth-github'
 end
 
 group :development do
